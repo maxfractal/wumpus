@@ -38,11 +38,11 @@ while unvisited_caves != []:
         print (number, ":", caves[number]);
         print('------------');
 #end connecting caves
-for i in cave_numbers:
-    for j in range(3):
-        passage_to = choice(cave_numbers)
-        caves[i].append(passage_to)
-print(caves);
+#for i in cave_numbers:
+#    for j in range(3):
+#        passage_to = choice(cave_numbers)
+#        caves[i].append(passage_to)
+#print(caves);
 
 wumpus_location = choice(cave_numbers)
 wumpus_friend_location = choice(cave_numbers)
