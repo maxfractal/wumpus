@@ -25,8 +25,8 @@ print ("of the cave you wish to enter next.");
 
 while True:
     print ("You are in a cave", player_location);
-    if (player_location == wumpus_location - 1 or
-        player_location == wumpus_location + 1):
+    print ("From here, you can see caves:", caves[player_location]);
+    if wumpus_location in caves[player_location]:
         print ("I smell a wumpus...");
     if (player_location == wumpus_friend_location - 1 or
         player_location == wumpus_friend_location + 1):
@@ -35,9 +35,9 @@ while True:
     print ("Which cave next?");
     player_input = input(">")
     if (not player_input.isdigit() or
-        int(player_input) not in [player_location]):
-        print player_input + "?";
-        print (player_input, " is not a cave!");
+        int(player_input) not in caves[player_location]):
+            print (player_input + "?");
+            print (player_input, " is not a cave!");
 
     else: 
         player_location = int(player_input)
