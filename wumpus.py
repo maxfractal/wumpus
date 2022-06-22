@@ -38,6 +38,9 @@ while unvisited_caves != []:
         print (number, ":", caves[number]);
         print('------------');
 #end connecting caves
+
+"""I have no idea is this next section stays 
+or not."""
 for i in cave_numbers:
     for j in range(3):
         passage_to = choice(cave_numbers)
