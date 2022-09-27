@@ -1,6 +1,13 @@
 from random import choice
 
-cave_numbers = range(0,20)
+cave_numbers = range(1,21)
+wumpus_location = choice(cave_numbers)
+player_location = choice(cave_numbers)
+while player_location == wumpus_location:
+    player_location = choice(cave_numbers)
+
+
+    
 caves = []
 for i in cave_numbers:
     caves.append([])
@@ -12,7 +19,14 @@ for i in cave_numbers:
 unvisited_caves = list(range(0, 20));
 visited_caves = [0];
 unvisited_caves.remove(0);
+
 #main loop
+#replacing section 4 and 5 pg.47
+print ("You are in a cave", player_location);
+print ("From here, you can see caves:", caves[player_location]);
+if wumpus_location in caves[player_location]:
+    print ("I smell a wumpus!");
+
 while unvisited_caves != []:
     i = choice(visited_caves)
     if len(caves[i]) >= 3:
