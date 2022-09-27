@@ -4,28 +4,19 @@
 
 from random import choice
 
-cave_numbers = range(1,21)
-"""
+cave_numbers = range(0,20)
+
 wumpus_location = choice(cave_numbers)
-wumpus_friend_location = choice(cave_numbers)
 player_location = choice(cave_numbers)
-while (player_location == wumpus_location or 
-        player_location == wumpus_friend_location):
+while player_location == wumpus_location:
     player_location = choice(cave_numbers)
 
 
+    
+caves = []
+for i in cave_numbers:
+    caves.append([])
 
-
-"""
-caves = [];
-print(caves);
-print("___test____");
-#for i in cave_numbers:
-#    caves.append([])
-
-
-
-"""
 #Connecting caves    
 #set up
 #changing unvisited_caves to a list
@@ -67,13 +58,13 @@ while unvisited_caves != []:
         print('------------');
 #end connecting caves
 
-#I have no idea is this next section stays or not.
+"""I have no idea is this next section stays 
+or not."""
 for i in cave_numbers:
     for j in range(3):
         passage_to = choice(cave_numbers)
         caves[i].append(passage_to)
 print(caves);
-"""
 
 wumpus_location = choice(cave_numbers)
 wumpus_friend_location = choice(cave_numbers)
@@ -87,12 +78,10 @@ print ("You can see ", len(cave_numbers), " caves.");
 print ("To play, just type the number");
 print ("of the cave you wish to enter next.");
 
-while 1:
+while True:
     print ("You are in a cave", player_location);
-    #print ("From here, you can see caves:", caves[player_location]);
-    if (player_location == wumpus_location - 1 or
-    player_location == wumpus_location + 1):
-    # in caves[player_location]:
+    print ("From here, you can see caves:", caves[player_location]);
+    if wumpus_location in caves[player_location]:
         print ("I smell a wumpus...");
     if (player_location == wumpus_friend_location - 1 or
         player_location == wumpus_friend_location + 1):
@@ -101,8 +90,7 @@ while 1:
     print ("Which cave next?");
     player_input = input(">")
     if (not player_input.isdigit() or
-        #int(player_input) not in caves[player_location]):
-        int(player_input) not in cave_numbers):
+        int(player_input) not in caves[player_location]):
             print (player_input + "?");
             #print (player_input, " is not a cave!");
             print ("That's not a direction that I can see!");
