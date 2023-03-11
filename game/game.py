@@ -3,15 +3,15 @@ def play():
     print("Escape from Cave Terror")
     while True:
         action_input = get_player_command()
-        if action_input in ['n','N']:
+        if action_input in ['n','N','north','Nouth']:
             print("Go North!")
-        elif action_input in ['s','S']:
+        elif action_input in ['s','S','south','South']:
             print("Go South!")
-        elif action_input in ['e','E']:
+        elif action_input in ['e','E','east','East']:
             print("Go East!")
-        elif action_input in ['w','W']:
+        elif action_input in ['w','W','west','West']:
             print("Go West!")
-        elif action_input in ['i','I']:
+        elif action_input in ['i','I','inventory','Inventory']:
             print("Inventory:")
             #print(inventory)
             for item in inventory:
