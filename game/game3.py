@@ -2,15 +2,15 @@
 import weapons
 
 
-r1 = Rock()
-d1 = Dagger()
+r1 = weapons.Rock("A fist-sized rock, suitable for bludgeoning.",5)
+d1 = weapons.Dagger()
 
 def play():
-    inventory = [r1().name, 'Gold(5)', 'Crusty Bread']
+    inventory = [r1.name, d1.name, 'Gold(5)', 'Crusty Bread']
     print("Escape from Cave Terror")
     while True:
         action_input = get_player_command()
-        if action_input in ['n','N','north','Nouth']:
+        if action_input in ['n','N','north','North']:
             print("Go North!")
         elif action_input in ['s','S','south','South']:
             print("Go South!")
