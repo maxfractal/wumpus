@@ -1,13 +1,9 @@
 #this version is like the book at this point
-import weapons
-
-
-r1 = weapons.Rock("A fist-sized rock, suitable for bludgeoning.",5)
-d1 = weapons.Dagger()
+from player import Player
 
 def play():
-    inventory = [r1.name, d1.name, 'Gold(5)', 'Crusty Bread',weapons.RustySword()]
-    print("Escape from Cave Terror")
+    print("Escape from Cave Terror!")
+    player = Player()
     while True:
         action_input = get_player_command()
         if action_input in ['n','N','north','North']:
@@ -19,10 +15,7 @@ def play():
         elif action_input in ['w','W','west','West']:
             print("Go West!")
         elif action_input in ['i','I','inventory','Inventory']:
-            print("Inventory:")
-            #print(inventory)
-            for item in inventory:
-                print('*' + str(item))
+            player.print_inventory()
         else:
             print("Invalid action!")
             print('Bye!')
@@ -30,18 +23,5 @@ def play():
 
 def get_player_command():
         return input('Action: ')
-
-def most_powerful_weapon(inventory):
-    max_damage = 0
-    best_weapon = None
-    for item in inventory:
-        try:
-            if item.damage > max_damage:
-                best_weapon = item
-                max_damage = item.damage
-        except ArithmeticError:
-            pass
-
-    return best_weapon
 
 play()

@@ -6,7 +6,7 @@ class Weapon:
         return self.name
 
 class Rock:
-    def __init__(self, description, damage):
+    def __init__(self):
         self.name = "Rock"
         self.description = "A fist-sized rock, suitable for bludgeoning."
         self.damage = 5
