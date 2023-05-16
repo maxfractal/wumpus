@@ -6,7 +6,7 @@ r1 = weapons.Rock("A fist-sized rock, suitable for bludgeoning.",5)
 d1 = weapons.Dagger()
 
 def play():
-    inventory = [r1.name, d1.name, 'Gold(5)', 'Crusty Bread']
+    inventory = [r1.name, d1.name, 'Gold(5)', 'Crusty Bread',weapons.RustySword()]
     print("Escape from Cave Terror")
     while True:
         action_input = get_player_command()
@@ -30,5 +30,18 @@ def play():
 
 def get_player_command():
         return input('Action: ')
+
+def most_powerful_weapon(inventory):
+    max_damage = 0
+    best_weapon = None
+    for item in inventory:
+        try:
+            if item.damage > max_damage:
+                best_weapon = item
+                max_damage = item.damage
+        except ArithmeticError:
+            pass
+
+    return best_weapon
 
 play()
