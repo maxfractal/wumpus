@@ -6,7 +6,7 @@ print("What will your companions name be?\n\n")
 first = ('Baby Oil', 'Bad News', 'Big Burps', "Bill 'Beenie-Weenie'",
 "Bob 'Stinkbug'", 'Bowel Noises', 'Boxelder', "Bud 'Lite' ",
 'Butterbean', 'Buttermilk', 'Buttocks', 'Chad', 'Chesterfield',
-'Chewy','Chloe', 'Chigger", "Cinnabuns', 'Cleet', 'Cornbread', 'Crab Meat',
+'Chewy','Chloe', 'Chigger","Cinches", "Cinnabuns', 'Cleet', 'Cornbread', 'Crab Meat',
 'Crapps', 'Dark Skies', 'Dennis Clawhammer', 'Dicman', 'Elphonso',
 'Fancypants', 'Figgs', 'Foncy', 'Gootsy', 'Greasy Jim', 'Huckleberry',
 'Huggy', 'Ignatious', 'Jimbo', "Joe 'Pottin Soil'", 'Johnny',
@@ -32,7 +32,7 @@ last = ('Appleyard', 'Bigmeat', 'Bloominshine', 'Boogerbottom',
 'Stevens', 'Stroganoff', 'Sugar-Gold', 'Swackhamer', 'Tippins',
 'Turnipseed', 'Vinaigrette', 'Walkingstick', 'Wallbanger', 'Weewax',
 'Weiners', 'Whipkey', 'Wigglesworth', 'Wimplesnatch', 'Winterkorn',
-'Woolysocks')
+'Woolysocks', 'Bulaga Ball\'s')
 
 while True:
     firstName = random.choice(first)
