@@ -19,6 +19,9 @@ def play():
             player.move_west
         elif action_input in ['i','I','inventory','Inventory']:
             player.print_inventory()
+        elif action_input in ['q','Q','quit','Quit']:
+            print('Bye! Come back to the cave soon!')
+            exit()
         else:
             print("Invalid action!")
             print('Bye!')
