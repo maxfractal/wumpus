@@ -114,5 +114,5 @@ while 1:
             print ("Aargh! You got hugged by a wumpus!");
             break
         if player_location == wumpus_friend_location:
-            print ("Aargh! You got eaten by the wumpus' friend wumpus!");
+            print ("Aargh! You got eaten by the wumpus' friend Wumpier Wumpus!");
             break
