@@ -10,13 +10,13 @@ def play():
         print(room.intro_text())
         action_input = get_player_command()
         if action_input in ['n','N','north','North']:
-            player.move_north
+            move_player(player, 0, -1)
         elif action_input in ['s','S','south','South']:
-            player.move_south
+            move_player(player, 0, 1)
         elif action_input in ['e','E','east','East']:
-            player.move_east
+            move_player(player, 1, 0)
         elif action_input in ['w','W','west','West']:
-            player.move_west
+            move_player(player, -1, 0)
         elif action_input in ['i','I','inventory','Inventory']:
             player.print_inventory()
         elif action_input in ['q','Q','quit','Quit']:
@@ -29,5 +29,13 @@ def play():
 
 def get_player_command():
         return input('Action: ')
+
+def move_player(player, dx, dy):
+    new_x = player.x + dx
+    new_y = player.y + dy
+    if world.tile_at(new_x, new_y) is None:
+        print("You can't go that way.")
+        return
+    player.move(dx, dy)
 
 play()
