@@ -1,4 +1,5 @@
 import items
+import world
 
 class Player:
     def __init__(self):
@@ -10,6 +11,7 @@ class Player:
 
         self.x = 1
         self.y = 2
+        self.hp = 100
 
     def print_inventory(self):
         print("Inventory:")
@@ -45,6 +47,22 @@ class Player:
 
     def move_west(self):
         self.move(dx=-1,dy=0)
+
+    def attack(self):
+        best_weapon = self.most_powerful_weapon()
+        room = world.tile_at(self.x,self.y)
+        enemy = room.enemy
+        print("You use {} against {}!".format(best_weapon.name, enemy.name))
+        enemy.hp -= best_weapon.damage
+        if not enemy.is_alive():
+            print("You've killed {}!".format(enemy.name))
+        else:
+            print("{} HP is {}.".format(enemy.name, enemy.hp))
+
+    def modify_player(selfself, player):
+        if self.enemy.is_alive():
+            player.hp = player.hp - self.enemy.damage
+            print("Enemy does {} damage. You have {} HP remaining.".format(self.enemy.damage, player.hp))
 
 
         

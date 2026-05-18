@@ -7,8 +7,12 @@ class MapTile:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+
     def intro_text(self):
         raise NotImplementedError("Create a subclass instead!")
+
+    def modify_player(self, player):
+        pass
     
 class StartTile(MapTile):
     def intro_text(self):

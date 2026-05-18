@@ -8,20 +8,23 @@ def play():
     while True:
         room = world.tile_at(player.x,player.y)
         print(room.intro_text())
-        action_input = get_player_command()
-        if action_input in ['n','N','north','North']:
+        room.modify_player(player) #new line
+        action_input = get_player_command().strip().lower()
+        if action_input in ['n','north']:
             move_player(player, 0, -1)
-        elif action_input in ['s','S','south','South']:
+        elif action_input in ['s','south']:
             move_player(player, 0, 1)
-        elif action_input in ['e','E','east','East']:
+        elif action_input in ['e','east']:
             move_player(player, 1, 0)
-        elif action_input in ['w','W','west','West']:
+        elif action_input in ['w','west']:
             move_player(player, -1, 0)
-        elif action_input in ['i','I','inventory','Inventory']:
+        elif action_input in ['i','inventory']:
             player.print_inventory()
-        elif action_input in ['m','M','map','Map','location','Location']:
+        elif action_input in ['a','attack']:
+            player.attack()
+        elif action_input in ['m','map','location']:
             print_player_location(player)
-        elif action_input in ['q','Q','quit','Quit']:
+        elif action_input in ['q','quit']:
             print('Bye! Come back to the cave soon!')
             exit()
         else:
