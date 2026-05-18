@@ -13,3 +13,21 @@ class GiantSpider(Enemy):
         self.name = "Giant Spider"
         self.hp = 10
         self.damage = 2
+
+class Orge(Enemy):
+    def __init__(self):
+        self.name = "Orge"
+        self.hp = 30
+        self.damage = 10
+
+class BatColony(Enemy):
+    def __init__(self):
+        self.name = "Colony of Bats"
+        self.hp = 100
+        self.damage = 4
+
+class RockMonster(Enemy):
+    def __init__(self):
+        self.name = "Rock Monster"
+        self.hp = 80
+        self.damage = 15
