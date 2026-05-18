@@ -1,2 +1,8 @@
 .DS_Store
 __pycache__
+../.idea
+ ../.idea/.gitignore
+        ../.idea/inspectionProfiles/
+        ../.idea/misc.xml
+        ../.idea/modules.xml
+        ../.idea/vcs.xml

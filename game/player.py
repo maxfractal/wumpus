@@ -52,6 +52,8 @@ class Player:
         best_weapon = self.most_powerful_weapon()
         room = world.tile_at(self.x,self.y)
         enemy = room.enemy
+        #[TODO]Need to add an else for using your weapon but there is no monster
+        #[TODO]in the tile
         print("You use {} against {}!".format(best_weapon.name, enemy.name))
         enemy.hp -= best_weapon.damage
         if not enemy.is_alive():
