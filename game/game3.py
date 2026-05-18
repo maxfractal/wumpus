@@ -19,6 +19,8 @@ def play():
             move_player(player, -1, 0)
         elif action_input in ['i','I','inventory','Inventory']:
             player.print_inventory()
+        elif action_input in ['m','M','map','Map','location','Location']:
+            print_player_location(player)
         elif action_input in ['q','Q','quit','Quit']:
             print('Bye! Come back to the cave soon!')
             exit()
@@ -37,5 +39,17 @@ def move_player(player, dx, dy):
         print("You can't go that way.")
         return
     player.move(dx, dy)
+
+def print_player_location(player):
+    for y, row in enumerate(world.world_map):
+        map_row = []
+        for x, tile in enumerate(row):
+            if player.x == x and player.y == y:
+                map_row.append("P")
+            elif tile is None:
+                map_row.append(" ")
+            else:
+                map_row.append(".")
+        print(" ".join(map_row))
 
 play()

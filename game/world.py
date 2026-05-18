@@ -1,3 +1,8 @@
+import random
+
+import enemies
+
+
 class MapTile:
     def __init__(self, x, y):
         self.x = x
@@ -25,12 +30,31 @@ class VictoryTile(MapTile):
 
         Victory is yours!
         """
+class EnemyTile(MapTile):
+    def __init__(self, x, y):
+        r = random.random()
+        if r < 0.50:
+            self.enemy = enemies.GiantSpider()
+        elif r < 0.80:
+            self.enemy = enemies.Orge()
+        elif r < 0.95:
+            self.enemy = enemies.BatColony()
+        else:
+            self.enemy = enemies.RockMonster()
+
+        super().__init__(x, y)
+
+    def intro_text(self):
+        if self.enemy.is_alive():
+            return "A {} awaits!".format(self.enemy.name)
+        else:
+            return "You've defeated the {}.".format(self.enemy.name)
     
 world_map = [
     [None, VictoryTile(1,0),None],
     [None,BoringTile(1,1),None],
-    [BoringTile(0,2),StartTile(1,2),BoringTile(2,2)],
-    [None,BoringTile(1,3),None]
+    [EnemyTile(0,2),StartTile(1,2),EnemyTile(2,2)],
+    [None,EnemyTile(1,3),None]
 ]
 
 def tile_at(x,y):
