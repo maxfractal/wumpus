@@ -27,6 +27,12 @@ def play():
         elif action_input in ['q','quit']:
             print('Bye! Come back to the cave soon!')
             exit()
+        elif action_input in ['?','h','help']:
+            print("This is the help menu:\n"
+                  "N, S, E, or W to move in a direction.\n"
+                  "M for Map\n"
+                  "I for Inventory and "
+                  "A for attack")
         else:
             print("Invalid action!")
             print('Bye!')
